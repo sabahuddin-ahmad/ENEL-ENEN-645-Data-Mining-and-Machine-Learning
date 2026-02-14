@@ -5,7 +5,7 @@ The approved course outlines are [here](./Outline/ENEN645-Winter2026-CourseOutli
 
 ### Important Dates
 - Assignment 01 due January 30th at midnight - Submit in a D2L dropbox
-- Assignment 02 due February 13th at midnight - Submit in a D2L dropbox
+- Assignment 02 due February 27th (extended - initial submissio nwas on 13th) at midnight - Submit in a D2L dropbox
 - Midterm 01 is on 23 February in the classroom
 - Midterm 02 is on 06 March in the classroom
 - Final Projects is due 08 April - Submit in a D2L dropbox
@@ -27,6 +27,9 @@ The approved course outlines are [here](./Outline/ENEN645-Winter2026-CourseOutli
 - [VPN instructions](https://ucalgary.service-now.com/it?id=kb_article&sys_id=52a169d6dbe5bc506ad32637059619cd)
 
 Please check the instructions to create a [conda environment](https://rcs.ucalgary.ca/Conda_on_ARC#Installing_Conda) and install [PyTorch](https://rcs.ucalgary.ca/PyTorch_on_ARC).
+
+# Practice Questions
+- [Practice questions](./practice_midterm_questions.pdf)
 
 # Slides and Tutorials
 
