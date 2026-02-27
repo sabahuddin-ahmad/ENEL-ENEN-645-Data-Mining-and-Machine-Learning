@@ -48,6 +48,10 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - [T: Transfer Learning](./Tutorials/transfer_learning_garbage_images.ipynb)
 - [L: Traditional ML](./Slides/Traditional_ML.pdf)
 - [T: Traditional ML](./Tutorials/Traditional_ML(HMEQ_Data).ipynb)
+- [L: Discussion Assignment 1](./Slides/experimental_design_garbage_example.pdf)
+- T: Transfer Learning Tutorial is in the folder SLURM
+- [L:UNET Model](./Slides/unets.pdf)
+- [T:UNET - Denoising Example](./Tutorials/denoising_1d_signals.ipynb)
 
 
 
