@@ -52,6 +52,7 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - T: Transfer Learning Tutorial is in the folder SLURM
 - [L:UNET Model](./Slides/unets.pdf)
 - [T:UNET - Denoising Example](./Tutorials/denoising_1d_signals.ipynb)
+- T: UNET Segmentation Tutorial is in the folder SLURM
 
 
 
