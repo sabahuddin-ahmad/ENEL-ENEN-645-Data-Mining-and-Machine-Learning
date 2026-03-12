@@ -13,7 +13,7 @@ from monai.inferers import sliding_window_inference
 from monai.transforms import (
     Compose, LoadImaged, EnsureChannelFirstd, Orientationd, 
     Spacingd, ScaleIntensityd, RandCropByPosNegLabeld, EnsureTyped,
-    SaveImaged, Invertd , AsDiscrete
+    SaveImaged, Invertd , AsDiscrete, ThresholdIntensityd
 )
 from monai.handlers.utils import write_nifti
 from monai.handlers.utils import from_engine
@@ -22,13 +22,13 @@ from monai.handlers.utils import from_engine
 
 # --- Configuration ---
 WANDB_PROJECT = "3D_Medical_Segmentation"
-DATA_ROOT = "./data" # Root folder containing /train, /val, /test
+DATA_ROOT = "/work/TALC/ensf617_2026w/Skull-stripping" # Root folder containing /train, /val, /test
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def get_data_dicts(folder):
     """Globs images and labels from a specific folder."""
-    images = sorted(glob.glob(os.path.join(DATA_ROOT, folder, "images", "*.nii.gz")))
-    labels = sorted(glob.glob(os.path.join(DATA_ROOT, folder, "labels", "*.nii.gz")))
+    images = sorted(glob.glob(os.path.join(DATA_ROOT, "Images", folder,  "*.nii.gz")))
+    labels = sorted(glob.glob(os.path.join(DATA_ROOT, "Masks", folder,  "*.nii.gz")))
     return [{"image": img, "label": lbl} for img, lbl in zip(images, labels)]
 
 # --- 1. Initialize W&B ---
@@ -45,6 +45,7 @@ train_transforms = Compose([
     LoadImaged(keys=["image", "label"]),
     EnsureChannelFirstd(keys=["image", "label"]),
     ScaleIntensityd(keys=["image"], minv=0, maxv=1),
+    ThresholdIntensityd(keys=["label"], threshold=0.5, above=1, below=0),
     RandCropByPosNegLabeld(
         keys=["image", "label"], label_key="label",
         spatial_size=config.roi_size, pos=1, neg=1, num_samples=4
@@ -56,11 +57,12 @@ val_transforms = Compose([
     LoadImaged(keys=["image", "label"]),
     EnsureChannelFirstd(keys=["image", "label"]),
     ScaleIntensityd(keys=["image"], minv=0, maxv=1),
+    ThresholdIntensityd(keys=["label"], threshold=0.5, above=1, below=0),
     EnsureTyped(keys=["image", "label"]),
 ])
 
-train_ds = Dataset(data=get_data_dicts("train"), transform=train_transforms)
-val_ds = Dataset(data=get_data_dicts("val"), transform=val_transforms)
+train_ds = Dataset(data=get_data_dicts("Train"), transform=train_transforms)
+val_ds = Dataset(data=get_data_dicts("Val"), transform=val_transforms)
 
 train_loader = DataLoader(train_ds, batch_size=config.batch_size, shuffle=True)
 val_loader = DataLoader(val_ds, batch_size=1)
@@ -135,7 +137,7 @@ wandb.finish()
 
 # 1. Setup Test Metric and Data
 test_dice_metric = DiceMetric(include_background=True, reduction="mean")
-test_ds = Dataset(data=get_data_dicts("test"), transform=val_transforms)
+test_ds = Dataset(data=get_data_dicts("Test"), transform=val_transforms)
 test_loader = DataLoader(test_ds, batch_size=1, num_workers=1)
 
 # 2. Setup Post-processing & Saver
