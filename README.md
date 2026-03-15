@@ -53,6 +53,8 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - [L:UNET Model](./Slides/unets.pdf)
 - [T:UNET - Denoising Example](./Tutorials/denoising_1d_signals.ipynb)
 - T: UNET Segmentation Tutorial is in the folder SLURM
+- [T: Generative Adversarial Networks and Domain Adaptation](./Slides/GANs_DA.pdf)
+- [T: Self-supervised Learning](./Slides/SSL.pdf)
 
 
 
