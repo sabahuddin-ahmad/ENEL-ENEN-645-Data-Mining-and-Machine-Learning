@@ -55,7 +55,8 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - T: UNET Segmentation Tutorial is in the folder SLURM
 - [L: Generative Adversarial Networks and Domain Adaptation](./Slides/GANs_DA.pdf)
 - [L: Self-supervised Learning](./Slides/SSL.pdf)
-- [L: Generative Adversarial Networks](./Tutorials/GAN_mnist.ipynb)
+- [T: Generative Adversarial Networks](./Tutorials/GAN_mnist.ipynb)
+- [T: Domain Adversarial Domain Adaptation](./Tutorials/DANN-MNIST.ipynb)
 
 
 
