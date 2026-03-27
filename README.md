@@ -56,7 +56,10 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - [L: Generative Adversarial Networks and Domain Adaptation](./Slides/GANs_DA.pdf)
 - [L: Self-supervised Learning](./Slides/SSL.pdf)
 - [T: Generative Adversarial Networks](./Tutorials/GAN_mnist.ipynb)
+- [T: Domain Shift Problem](./Tutorials/MNIST-CNN-DOMAIN-SHIFT.ipynb)
 - [T: Domain Adversarial Domain Adaptation](./Tutorials/DANN-MNIST.ipynb)
+- [L: XAI](./Slides/explainable_AI.pdf)
+- [T: XAI](./Tutorials/alzheimer_classificiation.ipynb)
 
 
 
