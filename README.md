@@ -60,6 +60,9 @@ Please check the instructions to create a [conda environment](https://rcs.ucalga
 - [T: Domain Adversarial Domain Adaptation](./Tutorials/DANN-MNIST.ipynb)
 - [L: XAI](./Slides/explainable_AI.pdf)
 - [T: XAI](./Tutorials/alzheimer_classificiation.ipynb)
+- [L: PINNs](./Slides/PINNs.pdf)
+- [T: PINNs](./Tutorials/heat_eqn_tutorial.ipynb)
+
 
 
 
